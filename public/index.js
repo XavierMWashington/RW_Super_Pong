@@ -4,7 +4,7 @@ const BALL_COLOR = '#ff3333';
 
 
 
-const socket = io('https://super-pong-app.herokuapp.com/');
+const socket = io('https://rw-super-pong.herokuapp.com/');
 socket.on('canvas_size', setCanvasSize);
 socket.on('gameStart', ridGeneralHud); //Also activates the bothPlayersIn Boolean
 socket.on('gameState', handleGameState);
