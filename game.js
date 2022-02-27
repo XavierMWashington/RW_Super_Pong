@@ -32,8 +32,8 @@ function createGameState(){
             },
             size: 15,
             vel: {
-                x: 6,
-                y: 6
+                x: 0,
+                y: 0
             },
             speed: {
                 x: 0,
