@@ -65,7 +65,7 @@ function gameLoop(state){
         return 1;
     }
 
-    ball.pos.y += 1;
+    ball.pos.y += ball.vel.y;
     console.log(ball.pos.y)
     ball.pos.x += ball.vel.x;
 
