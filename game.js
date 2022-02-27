@@ -32,8 +32,8 @@ function createGameState(){
             },
             size: 15,
             vel: {
-                x: 0,
-                y: 0
+                x: 6,
+                y: 6
             },
             speed: {
                 x: 0,
@@ -65,7 +65,8 @@ function gameLoop(state){
         return 1;
     }
 
-    ball.pos.y += ball.vel.y;
+    ball.pos.y += 1;
+    console.log(ball.pos.y)
     ball.pos.x += ball.vel.x;
 
     //wall collision 

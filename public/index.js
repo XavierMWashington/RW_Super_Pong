@@ -154,6 +154,9 @@ function init(){
         countDown -= 1;
         generalText.innerText = "Game starting in " + countDown + " seconds"; 
         if(countDown <= 0){
+            if(playerNumber === 2){
+                socket.emit("gameon");
+            }
             clearInterval(intervalCount);
             generalHud.style.display = "none";
             gameInitialized = true;

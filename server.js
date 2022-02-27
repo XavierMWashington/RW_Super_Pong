@@ -1,5 +1,10 @@
-const express = require('express')();
-const httpServer = require('http').createServer(express);
+const express = require('express');
+const { dirname } = require('path');
+
+const PORT = process.env.PORT || 3000;
+const app = express();
+const httpServer = app.listen(PORT);
+const io = require('socket.io')(httpServer);
 
 const { FRAME_RATE, CANVAS_SIZE } = require('./constant');
 const { gameLoop } = require('./game');
@@ -13,16 +18,15 @@ let activation;
 let gameStarted = false;
 let frameActivation = false;
 
-const io = require('socket.io')(httpServer, {
-    cors: {
-        origin: "*",
-        methods: ["GET", "POST"],
-        credentials: true
+app.use(express.static('public'));
 
-    }
-});
+app.get("/", (req, res) => {
+    console.log(__dirname);
+    res.status(200)
+    .sendFile(path.join(__dirname, "public", "index.html"));
+})
 
-const socket = io
+
 
 //Major note!!!
     //The "client" is actually called the socket in normal circumstances. 
@@ -47,6 +51,7 @@ io.on('connection', client =>{
 
     function handleJoinGame(joinCode){
         client.emit("gameStart");
+        console.log("Begin")
         frameActivation = false;
         gameStarted = false;
 
@@ -122,6 +127,7 @@ io.on('connection', client =>{
     }
 
     function keyUp(){
+        console.log("press")
         const roomName =  clientRooms[client.id];
 
         activation = false;
@@ -224,6 +230,7 @@ function startGameInterval(roomNumber){
 
         console.log(frameActivation)
         console.log(gameStarted)
+        console.log(ball.vel.y);
 
         if (!winner){
             emitGameState(roomNumber, gameState[roomNumber]);
@@ -247,4 +254,4 @@ function emitGameOver(roomName, victor){
 
 }
 
-io.listen(process.env.PORT || 3000);
+//io.listen(3000);
