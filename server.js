@@ -22,6 +22,8 @@ const io = require('socket.io')(httpServer, {
     }
 });
 
+const socket = io
+
 //Major note!!!
     //The "client" is actually called the socket in normal circumstances. 
         //So keep that in mind
@@ -245,4 +247,4 @@ function emitGameOver(roomName, victor){
 
 }
 
-io.listen(3000);
+io.listen(process.env.PORT || 3000);
