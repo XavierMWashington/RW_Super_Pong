@@ -1,0 +1,6 @@
+FRAME_RATE = 10;
+CANVAS_SIZE = 600;
+
+module.exports = {
+    FRAME_RATE, CANVAS_SIZE
+}

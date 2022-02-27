@@ -1,0 +1,82 @@
+section{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#initial-screen{
+    background-color: green;
+    height: 600px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+#initial-screen > div{
+    margin-top: 2rem;
+}
+
+#general-hud{
+    position:fixed;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#general-text{
+    width: 600px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(200,200,100, 0.8);
+}
+
+
+#back-button{
+    width: 80px;
+    margin-left: 80%;
+}
+
+#manual-screen{
+    background-color: rgb(180, 220, 180);
+    height: 600px;
+    width: 600px;
+    display: none;
+}
+
+#instruction-area{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto 100px auto;
+    padding-top: 150px;
+}
+
+#instruction-area > div{
+    display: grid;
+    grid-template-columns: repeat(2, 5fr);
+}
+
+#instruction-area > div > h2{
+    font-size: 18px;
+}
+
+#instruction-area > div > h3 {
+    font-size: 15px;
+}
+
+
+#game-screen{
+    background-color: black;
+    height: 600px;
+    width: 600px;
+    display: none;
+}

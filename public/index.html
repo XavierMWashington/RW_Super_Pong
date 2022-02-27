@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href = "styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div>
+            <div id="initial-screen">
+                <h1>Super Pong!</h1>
+                <div>
+                    <button id="new-game-button" type="submit">
+                        CREATE NEW GAME
+                    </button>
+                </div>
+
+                <div>
+                    <label>Enter a game code: </label>
+                    <input type="text" id="game-code-input"/>
+                    <button id ="join-game-button" type = "submit" id="game-input">
+                        JOIN GAME
+                    </button>
+                </div>
+
+                <div>
+                    <button id = "manual-screen-button" type = "submit">
+                        Game Manual
+                    </button>
+                </div>
+            </div>
+
+            <div id = "manual-screen">
+                <section id = "instruction-area">
+                    <div>
+                        <h2>Basic Movement:</h2>
+                        <h3>Arrow Keys and WASD keys</h3>
+                    </div>
+                    <div>
+                        <h2>Jump to the other side of the screen: </h2>
+                        <h3>Press the SPACE key when touching one side of the screen</h3>
+                    </div>
+                    <div>
+                        <h2>Increase the speed of the ball</h2>
+                        <h3>Press the SPACE key exactly when the ball makes impact with the controlled paddle</h3>
+                    </div>
+
+                    <button id = 'manual-back-button'>
+                        Go Back
+                    </button>
+
+                </section>
+            </div>
+
+            <div id="game-screen">
+                <div id="general-hud">
+                    <h1 id="general-text">
+                        Waiting for second player...
+                    </h1>
+                    <button id ="hud-back-button">Go Back</button>
+                </div>
+
+                <canvas id = 'canvas'></canvas>
+                <h1>Game Code: <span id = "game-code"></span></h1>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.min.js"></script>    
+    <script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>
